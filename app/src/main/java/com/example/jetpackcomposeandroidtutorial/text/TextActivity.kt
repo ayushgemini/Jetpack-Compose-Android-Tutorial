@@ -35,7 +35,7 @@ fun Greeting(name: String) {
 }
 
 // This is Preview function, use @Preview annotation to show preview of your UI elements
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true) // showSystemUi = true is for showing full screen as mobile view.
 @Composable
 fun GreetingPreview() {
     Greeting("Ayush Gemini")
