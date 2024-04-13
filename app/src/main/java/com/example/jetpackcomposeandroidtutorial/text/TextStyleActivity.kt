@@ -1,7 +1,6 @@
 package com.example.jetpackcomposeandroidtutorial.text
 
 import android.os.Bundle
-import android.text.style.LineHeightSpan
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,7 +21,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.jetpackcomposeandroidtutorial.R
 
 class TextStyleActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
