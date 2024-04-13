@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Jetpack Compose Android Tutorial</string>
+    <string name="title_activity_text">TextActivity</string>
+    <string name="greet_name">Ayush Gemini</string>
 </resources>
