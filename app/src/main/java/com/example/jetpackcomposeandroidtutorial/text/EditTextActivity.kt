@@ -30,6 +30,7 @@ class EditTextActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             // This Column composable arranges three input fields vertically: EditTextName, EditTextAge, and EditTextPassword.
+            // It is similar to LinearLayout with vertical orientation.
             Column {
                 EditTextName()
                 EditTextAge()

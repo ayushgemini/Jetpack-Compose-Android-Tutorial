@@ -4,4 +4,7 @@
     <string name="greet_name">Ayush Gemini</string>
     <string name="title_activity_text_style">TextStyleActivity</string>
     <string name="title_activity_edit_text">EditTextActivity</string>
+    <string name="title_activity_column">ColumnActivity</string>
+    <string name="title_activity_box">BoxActivity</string>
+    <string name="sample_image_desc">Sample Image Desc</string>
 </resources>
