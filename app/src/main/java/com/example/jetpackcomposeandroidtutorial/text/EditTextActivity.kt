@@ -18,10 +18,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -44,7 +42,7 @@ class EditTextActivity : ComponentActivity() {
 @Composable
 fun EditTextName() {
     var text by remember { mutableStateOf(TextFieldValue("")) }
-    androidx.compose.material3.TextField(value = text,
+    TextField(value = text,
         textStyle = TextStyle(fontSize = 20.sp, color = Color.Red),
         modifier = Modifier
             .padding(5.dp)
