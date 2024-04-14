@@ -14,11 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.jetpackcomposeandroidtutorial.Image.ImageActivity
 import com.example.jetpackcomposeandroidtutorial.layout.BoxActivity
 import com.example.jetpackcomposeandroidtutorial.layout.ColumnActivity
 import com.example.jetpackcomposeandroidtutorial.layout.ConstraintActivity
 import com.example.jetpackcomposeandroidtutorial.layout.LazyColumnActivity
 import com.example.jetpackcomposeandroidtutorial.layout.LazyRowActivity
+import com.example.jetpackcomposeandroidtutorial.layout.RowActivity
 import com.example.jetpackcomposeandroidtutorial.text.EditTextActivity
 import com.example.jetpackcomposeandroidtutorial.text.TextActivity
 import com.example.jetpackcomposeandroidtutorial.text.TextStyleActivity
@@ -36,7 +38,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Main() {
-    Column (modifier = Modifier.padding(0.dp, 50.dp, 0.dp,0.dp)){
+    Column(modifier = Modifier.padding(0.dp, 50.dp, 0.dp, 0.dp)) {
         val context = LocalContext.current
         Button(onClick = {
             context.startActivity(Intent(context, BoxActivity::class.java))
@@ -79,6 +81,17 @@ fun Main() {
             context.startActivity(Intent(context, LazyRowActivity::class.java))
         }) {
             Text(text = "Lazy Row")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, RowActivity::class.java))
+        }) {
+            Text(text = "Row Layout")
+        }
+
+        Button(onClick = {
+            context.startActivity(Intent(context, ImageActivity::class.java))
+        }) {
+            Text(text = "Image Activity")
         }
     }
 }
