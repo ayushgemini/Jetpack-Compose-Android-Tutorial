@@ -40,8 +40,15 @@ class LazyColumnActivity : ComponentActivity() {
 
 @Composable
 fun LoadPersonData(personList: List<Person>) {
+    // The LazyColumn composable is used to create a vertically scrolling list of items efficiently.
+    // It iterates over the list of Person objects and displays each item as a Card containing the person's name.
+    // Each Card is clickable, and when clicked, it displays a toast message showing the person's first and last name.
+    // The Card is styled with rounded corners and padding using modifiers.
+    // The Text composable inside the Card displays the person's first and last name, centered and styled with a font size of 16sp.
+    // The showToast function is used to display a toast message with the person's name when the Card is clicked.
+
     LazyColumn {
-        items(personList, itemContent = {person: Person ->
+        items(personList, itemContent = { person: Person ->
             val context = LocalContext.current
             Card(shape = RoundedCornerShape(5.dp),
                 modifier = Modifier
@@ -51,16 +58,22 @@ fun LoadPersonData(personList: List<Person>) {
                         showToast("${person.firstName} : ${person.lastName}", context)
                     }
             ) {
-               Text(text = "${person.firstName} : ${person.lastName}",
-                   style = TextStyle(fontSize = 16.sp, fontStyle = FontStyle.Normal, textAlign = TextAlign.Center),
-                   modifier = Modifier.padding(10.dp))
+                Text(
+                    text = "${person.firstName} : ${person.lastName}",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontStyle = FontStyle.Normal,
+                        textAlign = TextAlign.Center
+                    ),
+                    modifier = Modifier.padding(10.dp)
+                )
             }
 
         })
     }
 }
 
-fun showToast(message: String, context: Context){
+fun showToast(message: String, context: Context) {
     Toast.makeText(context, message, Toast.LENGTH_LONG).show()
 }
 
