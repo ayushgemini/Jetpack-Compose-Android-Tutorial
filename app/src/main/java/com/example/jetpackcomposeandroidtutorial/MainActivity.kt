@@ -1,47 +1,81 @@
 package com.example.jetpackcomposeandroidtutorial
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.jetpackcomposeandroidtutorial.ui.theme.JetpackComposeAndroidTutorialTheme
+import com.example.jetpackcomposeandroidtutorial.layout.BoxActivity
+import com.example.jetpackcomposeandroidtutorial.layout.ColumnActivity
+import com.example.jetpackcomposeandroidtutorial.layout.ConstraintActivity
+import com.example.jetpackcomposeandroidtutorial.layout.LazyColumnActivity
+import com.example.jetpackcomposeandroidtutorial.text.EditTextActivity
+import com.example.jetpackcomposeandroidtutorial.text.TextActivity
+import com.example.jetpackcomposeandroidtutorial.text.TextStyleActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            JetpackComposeAndroidTutorialTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            Main()
         }
     }
 }
 
+
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Main() {
+    Column {
+        val context = LocalContext.current
+        Button(onClick = {
+            context.startActivity(Intent(context, BoxActivity::class.java))
+        }) {
+            Text(text = "Box Layout")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, ColumnActivity::class.java))
+        }) {
+            Text(text = "Column Layout")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, ConstraintActivity::class.java))
+        }) {
+            Text(text = "Constraint Layout")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, EditTextActivity::class.java))
+        }) {
+            Text(text = "EditText")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, TextActivity::class.java))
+        }) {
+            Text(text = "Text")
+        }
+        Button(onClick = {
+            context.startActivity(Intent(context, TextStyleActivity::class.java))
+        }) {
+            Text(text = "Text Style")
+        }
+
+        Button(onClick = {
+            context.startActivity(Intent(context, LazyColumnActivity::class.java))
+        }) {
+            Text(text = "Lazy Column")
+        }
+    }
 }
 
-@Preview(showBackground = true)
+
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
-    JetpackComposeAndroidTutorialTheme {
-        Greeting("Android")
-    }
+    Main()
 }
