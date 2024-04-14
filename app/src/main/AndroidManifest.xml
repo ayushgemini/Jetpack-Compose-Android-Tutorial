@@ -13,6 +13,11 @@
         android:theme="@style/Theme.JetpackComposeAndroidTutorial"
         tools:targetApi="31">
         <activity
+            android:name=".layout.RowActivity"
+            android:exported="false"
+            android:label="@string/title_activity_row"
+            android:theme="@style/Theme.JetpackComposeAndroidTutorial" />
+        <activity
             android:name=".layout.LazyRowActivity"
             android:exported="false"
             android:label="@string/title_activity_lazy_row"
