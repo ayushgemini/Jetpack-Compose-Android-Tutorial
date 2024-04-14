@@ -9,4 +9,5 @@
     <string name="sample_image_desc">Sample Image Desc</string>
     <string name="title_activity_constraint">ConstraintActivity</string>
     <string name="title_activity_lazy_column">LazyColumnActivity</string>
+    <string name="title_activity_lazy_row">LazyRowActivity</string>
 </resources>

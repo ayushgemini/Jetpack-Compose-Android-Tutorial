@@ -6,15 +6,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposeandroidtutorial.layout.BoxActivity
 import com.example.jetpackcomposeandroidtutorial.layout.ColumnActivity
 import com.example.jetpackcomposeandroidtutorial.layout.ConstraintActivity
 import com.example.jetpackcomposeandroidtutorial.layout.LazyColumnActivity
+import com.example.jetpackcomposeandroidtutorial.layout.LazyRowActivity
 import com.example.jetpackcomposeandroidtutorial.text.EditTextActivity
 import com.example.jetpackcomposeandroidtutorial.text.TextActivity
 import com.example.jetpackcomposeandroidtutorial.text.TextStyleActivity
@@ -32,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Main() {
-    Column {
+    Column (modifier = Modifier.padding(0.dp, 50.dp, 0.dp,0.dp)){
         val context = LocalContext.current
         Button(onClick = {
             context.startActivity(Intent(context, BoxActivity::class.java))
@@ -69,6 +73,12 @@ fun Main() {
             context.startActivity(Intent(context, LazyColumnActivity::class.java))
         }) {
             Text(text = "Lazy Column")
+        }
+
+        Button(onClick = {
+            context.startActivity(Intent(context, LazyRowActivity::class.java))
+        }) {
+            Text(text = "Lazy Row")
         }
     }
 }
