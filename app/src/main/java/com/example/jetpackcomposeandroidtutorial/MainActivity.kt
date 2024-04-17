@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposeandroidtutorial.Image.ImageActivity
+import com.example.jetpackcomposeandroidtutorial.animation.CrossFadeActivity
 import com.example.jetpackcomposeandroidtutorial.card.CardActivity
 import com.example.jetpackcomposeandroidtutorial.layout.BoxActivity
 import com.example.jetpackcomposeandroidtutorial.layout.ColumnActivity
@@ -99,6 +100,12 @@ fun Main() {
             context.startActivity(Intent(context, CardActivity::class.java))
         }) {
             Text(text = "Card")
+        }
+
+        Button(onClick = {
+            context.startActivity(Intent(context, CrossFadeActivity::class.java))
+        }) {
+            Text(text = "CrossFadeAnimation")
         }
     }
 }

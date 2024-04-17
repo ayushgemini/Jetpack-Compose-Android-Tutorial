@@ -14,4 +14,5 @@
     <string name="title_activity_image">ImageActivity</string>
     <string name="title_activity_card">CardActivity</string>
     <string name="title_activity_button">ButtonActivity</string>
+    <string name="title_activity_cross_fade">CrossFadeActivity</string>
 </resources>
