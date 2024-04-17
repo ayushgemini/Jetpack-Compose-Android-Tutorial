@@ -43,7 +43,7 @@ fun CrossFadeAnimation(){
     var currentColor by remember { mutableStateOf(MyColors.Red) }
     Column {
         Row(modifier = Modifier.padding(0.dp, 50.dp, 0.dp, 0.dp )) {
-            MyColors.values().forEach { myColors ->
+            MyColors.entries.forEach { myColors ->
                 Button(
                     onClick = { currentColor = myColors },
                     Modifier.weight(1f, true)
